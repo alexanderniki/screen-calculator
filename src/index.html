@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="dpi_calc.js"></script>
+        <script type="text/javascript">document.addEventListener("DOMContentLoaded", main);</script>
+
+        <title>DPI calculator</title>
+    </head>
+
+    <body>
+
+        <div class="app">
+
+            <div class="app_bar">
+                <span class="appname">DPI calculator</span>
+            </div>
+
+            <div class="nav_bar" id="navigation">
+                <a href="#" id="menu_button" onclick="toggleMenu();">Menu</a>
+            </div>
+
+            <div id="menu">
+                <a href="#">DPI calculator</a><br />
+                <a href="#">Resource calculator</a><br />
+                <a href="#">About</a><br />
+                <a href="#">Exit</a>
+            </div>
+
+            <div class="app_content">
+
+                <div class="app_input">
+                    <fieldset class="border_light">
+                    <legend>Display</legend>
+                        Diagonal:
+                        <input type="text" name="diag" id="diag" class="border_light"> inches
+                        <br />
+                        Resolution:
+                        <input type="text" name="x" id="x" class="border_light"> x <input type="text" name="y" id="y" class="border_light"> pixels
+                    </fieldset>
+                </div>
+
+                <div class="app_result">
+                    <fieldset class="border_light">
+                    <legend>Result</legend>
+                        <span id="dpi_result">0</span> DPI
+                        <br />
+                        Android screen density: <span id="density_result">0</span>
+                        <br />
+                        Aspect ratio: <span id="aspectratio_result">0</span>
+                        <br/>
+                        Screen area: <span id="screenarea_result">0</span> sq. inch
+                    </fieldset>
+                </div>
+
+                <!--<div class="rescalc_fragment">
+                    <fieldset class="border_light">
+                    <legend>Resource calculator</legend>
+                        LDPI: <input type="text" name="ldpi" id="ldpi" class="border_light"> dp <br />
+                        MDPI: <input type="text" name="mdpi" id="mdpi" class="border_light"> dp <br />
+                        HDPI: <input type="text" name="hdpi" id="hdpi" class="border_light"> dp <br />
+                        XHDPI: <input type="text" name="xhdpi" id="xhdpi" class="border_light"> dp <br />
+                        XXHDPI: <input type="text" name="xxhdpi" id="xxhdpi" class="border_light"> dp <br />
+                        XXXHDPI: <input type="text" name="xxxhdpi" id="xxxhdpi" class="border_light"> dp
+                    </fieldset>
+                </div>-->
+                
+                <div class="rescalc2_fragment">
+                    <fieldset class="border_light">
+                    <legend>Resource calculator</legend>
+                        Value: <input type="text" name="" id="value_dp" class="border_light">
+                        <select id="density_type" class="border_light">
+                            <option value="LDPI">LDPI</option>
+                            <option selected  value="MDPI">MDPI</option>
+                            <option value="HDPI">HDPI</option>
+                            <option value="XHDPI">XHDPI</option>
+                            <option value="XXHDPI">XXHDPI</option>
+                            <option value="XXXHDPI">XXXHDPI</option>
+                        </select>
+                        <button id="calculate_button" class="border_light">Calculate</button>
+                        <br />
+                        <br />
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>LDPI: </td>
+                                    <td><span name="ldpi" id="ldpi" class="border_light"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                                <tr>
+                                    <td>MDPI: </td>
+                                    <td><span name="mdpi" id="mdpi"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                                <tr>
+                                    <td>XHDPI: </td>
+                                    <td><span name="hdpi" id="hdpi"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                                <tr>
+                                    <td>XHDPI: </td>
+                                    <td><span name="xhdpi" id="xhdpi"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                                <tr>
+                                    <td>XXHDPI: </td>
+                                    <td><span name="xxhdpi" id="xxhdpi"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                                <tr>
+                                    <td>XXXHDPI: </td>
+                                    <td><span name="xxxhdpi" id="xxxhdpi"></span></td>
+                                    <td> dp</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+    
+ 
+</html>
