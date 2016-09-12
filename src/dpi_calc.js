@@ -103,7 +103,7 @@ function printAspectRatio(asp_ratio) {
 }
 
 
-function round2 (i) {
+function round2(i) {
     // Округление в стиле JavaScript
     return Math.round(i * 100) / 100;
 }
@@ -122,7 +122,7 @@ function calculateAspectRatio2(x, y) {
 		"16:10" : 16 / 10,
 		"16:9" : 16 / 9,
 		"17:9" : 17 / 9,
-		"21:9" : 21 / 9,
+		"21:9" : 21 / 9
     };
     
     var ratio = x / y;
@@ -158,8 +158,17 @@ function calculateScreenArea(diag, ratio) {
 
 
 function printText(elem_id, content) {
+    
+    /**
+    * Обертка над стандартным innerHTML
+    * 
+    * @param {string} elem_id - id элемента: место, в которое пишем.
+    * @param {string} content - то, что пишется в elem_id.
+    */
+    
     document.getElementById(elem_id).innerHTML = content;
 }
+
 
 function calculateElementSizes(value, density) {
     
@@ -178,7 +187,8 @@ function calculateElementSizes(value, density) {
     density = density.toLowerCase();
     switch (density) {
         case "ldpi":
-            densities["ldpi"] = value / 0.75; // Приводим к mdpi и пересчитываем от него
+            value = value / 0.75;
+            densities["ldpi"] = value * 0.75; // Приводим к mdpi и пересчитываем от него
             densities["mdpi"] = value;
             densities["hdpi"] = value * 1.5;
             densities["xhdpi"] = value * 2.0;
@@ -248,6 +258,22 @@ function calculateElementSizes(value, density) {
 
 }
 
+function assignValues(value) {
+    
+    /**
+    * Распределяет значение параметра по различным dpi.
+    * Предполагается использовать эту функцию в качестве замены повторяющемуся в calculateElementSizes() коду.
+    *  
+    * @param {number} value - значение mdpi, относительно которого требуется рассчитать остальные.
+    */
+    
+    densities["ldpi"] = value * 0.75;
+    densities["mdpi"] = value;
+    densities["hdpi"] = value * 1.5;
+    densities["xhdpi"] = value * 2.0;
+    densities["xxhdpi"] = value * 3.0;
+    densities["xxxhdpi"] = value * 4.0;
+}
 
 function xCalculateElementSizes(value, density) {
     var densities = {
