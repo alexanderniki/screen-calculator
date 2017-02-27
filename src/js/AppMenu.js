@@ -1,0 +1,7 @@
+class AppMenu {
+
+    constructor () {
+        //
+    }
+
+}
