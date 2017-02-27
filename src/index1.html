@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        
+        <link rel="stylesheet" href="style/style.css">
+        
+        <script src="js/AndroidResourceCalculator.js"></script>
+        <script src="js/Display.js"></script>
+        <script src="js/Control.js"></script>
+        <script src="js/UnitConvertor.js"></script>
+        <script src="js/AppMenu.js"></script>
+        <script src="js/index.js"></script>
+        
+        <title>DPI calculator</title>
+    </head>
+    
+    <body onload="main()">
+    
+        <nav id="app_bar">
+            <menu id="main_menu">
+            </menu>
+        </nav>
+        
+        <section id="displayprop_fragment">
+            <div class="card">
+                <div class="card_content">
+                    <header>Display</header>
+                    Width, px.:
+                    <input type="text" name="x" id="x" class="border_light">
+                    <br />
+                    Height, px.:
+                    <input type="text" name="y" id="y" class="border_light">
+                    <br />
+                    Diagonal, in.:
+                    <input type="text" name="diag" id="diag" class="border_light">
+                    <br />
+                    DPI: <span id="dpi_result">0</span>
+                    <br />
+                    Android screen density: <span id="density_result">0</span>
+                    <br />
+                    Aspect ratio: <span id="aspectratio_result">0</span>
+                    <br/>
+                    Screen area, sq. inch: <span id="screenarea_result">0</span>
+                </div>
+                <div class="card_shadow"></div>
+            </div>
+        </section>
+        
+        <section id="rescacl_fragment">
+            <div class="card">
+                <div class="card_content">
+                    <header>Resource calculator</header>
+                    Value: <input type="text" name="" id="dp_input" class="border_light">
+                    <select id="density_type_list" class="border_light">
+                        <option value="LDPI">LDPI</option>
+                        <option selected value="MDPI">MDPI</option>
+                        <option value="HDPI">HDPI</option>
+                        <option value="XHDPI">XHDPI</option>
+                        <option value="XXHDPI">XXHDPI</option>
+                        <option value="XXXHDPI">XXXHDPI</option>
+                    </select>
+                    <button id="calculate_button" class="border_light">Calculate</button>
+                    <br />
+                    LDPI:
+                    <span name="ldpi" id="ldpi" class="border_light"></span> dp
+                    MDPI: 
+                    <span name="mdpi" id="mdpi"></span> dp
+                    XHDPI: <span name="hdpi" id="hdpi"></span> dp
+                    XHDPI: <span name="xhdpi" id="xhdpi"></span> dp
+                    XXHDPI: <span name="xxhdpi" id="xxhdpi"></span> dp
+                    XXXHDPI: <span name="xxxhdpi" id="xxxhdpi"></span> dp
+                </div>
+                <div class="card_shadow"></div>
+            </div>
+
+        </section>
+        
+        <section>
+            <div class="card">
+                <div class="card_content">
+                    <header>Convertor (px to physical size)</header>
+                    Pixels:
+                    <input type="text" name="" id="px_input" class="border_light">
+                    Screen DPI:
+                    <input type="text" name="" id="dpi_input" class="border_light">
+                    <button id="calculate_size_button" class="border_light">Calculate</button>
+                    Physical result:
+                    <span id="size_result">0</span>
+                </div>
+                <div class="card_shadow"></div>
+            </div>
+        </section>
+        
+        <section id="settings_fragment">
+            Settings
+        </section>
+        
+    </body>
+</html>
