@@ -31,9 +31,11 @@ class Control {
     }
     
     setWidth(width) {
+        
         /**
         * @param {number} width
         **/
+        
         console.log("Control.setWidth(width = " + width + ")");
         
         if (width >= 0) {
@@ -46,9 +48,11 @@ class Control {
     
     
     setHeight(height) {
+        
         /**
         * @param {number} height
         **/
+        
         console.log("Control.setHeight(height = " + height + ")")
         
         if (height >= 0) {
