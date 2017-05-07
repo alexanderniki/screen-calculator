@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0 user-scalable=no" />
+        <meta name="theme-color" content="#424242" />
         
         <link rel="stylesheet" href="style/style.css">
         
@@ -18,21 +19,40 @@
     
     <body onload="main()">
     
-        <nav id="app_bar">
-            <menu id="main_menu">
-            </menu>
-        </nav>
+        <div class="vbox_layout">
+        
+            <div class="toolbar" id="app_bar">
+                <span class="app_title">DPI Calculator</span>
+            </div>
+            
+            <div class="toolbar" id="nav_bar">
+                <div class="hbox_layout" id="tab_bar">
+                    <div class="btn_navigation"><a id="nav_display" href="#">DISPLAY</a></div>
+                    <div class="btn_navigation"><a id="nav_resource" href="#">RESOURCE</a></div>
+                    <div class="btn_navigation"><a id="nav_convertor" href="#">CONVERTOR</a></div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="app_content">
         
         <section id="displayprop_fragment">
-            <header>Display</header>
-            Width, px.:
-            <input type="text" name="x" id="x" class="border_light">
+            <br /> 
+            <hgroup>
+                <h1>Display</h1>
+                <h2>Calculate display properties</h2>
+            </hgroup>
             <br />
-            Height, px.:
-            <input type="text" name="y" id="y" class="border_light">
+            Width, px.:<br />
+            <input type="text" name="x" id="x" class="border_light text_field">
             <br />
-            Diagonal, in.:
-            <input type="text" name="diag" id="diag" class="border_light">
+            Height, px.:<br />
+            <input type="text" name="y" id="y" class="border_light text_field">
+            <br />
+            Diagonal, in.:<br />
+            <input type="text" name="diag" id="diag" class="border_light text_field">
+            <br />
             <br />
             DPI: <span id="dpi_result">0</span>
             <br />
@@ -43,9 +63,14 @@
             Screen area, sq. inch: <span id="screenarea_result">0</span>
         </section>
         
-        <section id="rescacl_fragment">
-            <header>Resource calculator</header>
-            Value: <input type="text" name="" id="dp_input" class="border_light">
+        <section id="rescalc_fragment">
+            <br />
+            <hgroup>
+                <h1>Resource calculator</h1>
+                <h2>Calculate resources</h2>
+            </hgroup>
+            <br />
+            Value: <input type="text" name="" id="dp_input" class="border_light text_field">
             <select id="density_type_list" class="border_light">
                 <option value="LDPI">LDPI</option>
                 <option selected value="MDPI">MDPI</option>
@@ -56,23 +81,25 @@
             </select>
             <button id="calculate_button" class="border_light">Calculate</button>
             <br />
-            LDPI:
-            <span name="ldpi" id="ldpi" class="border_light"></span> dp
-            MDPI: 
-            <span name="mdpi" id="mdpi"></span> dp
-            XHDPI: <span name="hdpi" id="hdpi"></span> dp
-            XHDPI: <span name="xhdpi" id="xhdpi"></span> dp
-            XXHDPI: <span name="xxhdpi" id="xxhdpi"></span> dp
-            XXXHDPI: <span name="xxxhdpi" id="xxxhdpi"></span> dp
-            <br />
+            LDPI: <span name="ldpi" id="ldpi"></span> px <br />
+            MDPI: <span name="mdpi" id="mdpi"></span> px <br />
+            HDPI: <span name="hdpi" id="hdpi"></span> px <br />
+            XHDPI: <span name="xhdpi" id="xhdpi"></span> px <br />
+            XXHDPI: <span name="xxhdpi" id="xxhdpi"></span> px <br />
+            XXXHDPI: <span name="xxxhdpi" id="xxxhdpi"></span> px <br />
         </section>
         
-        <section>
-            <header>Convertor (px to physical size)</header>
-            Pixels:
-            <input type="text" name="" id="px_input" class="border_light">
-            Screen DPI:
-            <input type="text" name="" id="dpi_input" class="border_light">
+        <section id="convertor_fragment">
+            <br />
+            <hgroup>
+                <h1>Convertor</h1>
+                <h2>Convert pixels to physical size</h2>
+            </hgroup>
+            <br />
+            Pixels: <br />
+            <input type="text" name="" id="px_input" class="border_light text_field"> <br />
+            Screen DPI: <br />
+            <input type="text" name="" id="dpi_input" class="border_light text_field"> <br />
             <button id="calculate_size_button" class="border_light">Calculate</button>
             Physical result:
             <span id="size_result">0</span>
@@ -82,5 +109,7 @@
             Settings
         </section>
     
+        </div>
+                
     </body>
 </html>

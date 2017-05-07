@@ -1,19 +1,9 @@
 class MyCalculatorApp {
     
     constructor() {
-        // let app_menu = new MainMenu();
         
-    }
-    
-    
-    ui_print(where, what) {
+        let app_menu = new AppMenu();
         
-        /**
-        * @param {string} where - UI element ID
-        * @param {string} what - text to put into the element
-        **/
-        
-        document.getElementById(where).innerHTML = what;
     }
     
     
@@ -50,14 +40,6 @@ class MyCalculatorApp {
         density_calc.matchDensities(dp, density_type);
         
         
-        // ERROR: this.ui_print is not a function - WTF is that???
-        /*this.ui_print("ldpi", density_calc.densities["ldpi"]);
-        this.ui_print("mdpi",  density_calc.densities["mdpi"]);
-        this.ui_print("hdpi", density_calc.densities["hdpi"]);
-        this.ui_print("xhdpi", density_calc.densities["xhdpi"]);
-        this.ui_print("xxhdpi", density_calc.densities["xxhdpi"]);
-        this.ui_print("xxxhdpi", density_calc.densities["xxxhdpi"]);*/
-        
         document.getElementById("ldpi").innerHTML = density_calc.densities["ldpi"];
         document.getElementById("mdpi").innerHTML = density_calc.densities["mdpi"];
         document.getElementById("hdpi").innerHTML = density_calc.densities["hdpi"];
@@ -83,8 +65,8 @@ class MyCalculatorApp {
         
     }
     
-    
 }
+
 
 function main() {
     my_calc = new MyCalculatorApp();

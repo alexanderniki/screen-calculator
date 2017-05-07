@@ -39,6 +39,7 @@ class Display {
         return str;
     }
     
+    
     toJSON(){
         /**
         * @todo find more correct way to produce JSON. This is terrible one :)
@@ -233,7 +234,7 @@ class Display {
         else if (this.dpi >= 400 && this.dpi < 560) {
             density = "xxhdpi";
         }
-        else { // dpi > 560
+        else { // dpi >= 560
             density = "xxxhdpi";
         }
         
@@ -309,5 +310,16 @@ class Display {
     }
     
     
+    swapSizes(size1, size2) {
+        if (size1 > size2) {
+            //
+        }
+        else if (size2 > size1) {
+            let buf = size1;
+            size1 = size2;
+            size2 = buf;
+        }
+    }
+    
+    
 }
-

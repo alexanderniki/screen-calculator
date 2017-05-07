@@ -1,6 +1,7 @@
 class AndroidResourceCalculator {
 
     constructor() {
+        
         this.densities = {
             "ldpi": 0,
             "mdpi": 0,
@@ -9,12 +10,14 @@ class AndroidResourceCalculator {
             "xxhdpi": 0,
             "xxxhdpi": 0,
         };
+        
     }
     
     
     getDensities() {
         return this.densities;
     }
+    
     
     matchDensities(value, density) {
         
