@@ -7,12 +7,17 @@
         
         <link rel="stylesheet" href="style/style.css">
         
-        <script src="js/AndroidResourceCalculator.js"></script>
-        <script src="js/Display.js"></script>
-        <script src="js/Control.js"></script>
-        <script src="js/UnitConvertor.js"></script>
-        <script src="js/AppMenu.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/controllers/AndroidResourceCalculator.js"></script>
+        <script src="js/controllers/AndroidScaleCalculator.js"></script>
+        <script src="js/models/Display.js"></script>
+        <script src="js/models/Control.js"></script>
+        <script src="js/controllers/UnitConvertor.js"></script>
+        <script src="js/app/AppMenu.js"></script>
+        <script src="js/app/index.js"></script>
+        
+        <!--<script src="dist/models.js"></script>
+        <script src="dist/controllers.js"></script>
+        <script src="dist/app.js"></script>-->
         
         <title>DPI calculator</title>
     </head>
@@ -61,6 +66,8 @@
             Aspect ratio: <span id="aspectratio_result">0</span>
             <br/>
             Screen area, sq. inch: <span id="screenarea_result">0</span>
+            <br />
+            The display is probably a: <span id="displayType_result"></span>
         </section>
         
         <section id="rescalc_fragment">
@@ -90,20 +97,63 @@
         </section>
         
         <section id="convertor_fragment">
-            <br />
-            <hgroup>
-                <h1>Convertor</h1>
-                <h2>Convert pixels to physical size</h2>
-            </hgroup>
-            <br />
-            Pixels: <br />
-            <input type="text" name="" id="px_input" class="border_light text_field"> <br />
-            Screen DPI: <br />
-            <input type="text" name="" id="dpi_input" class="border_light text_field"> <br />
-            <button id="calculate_size_button" class="border_light">Calculate</button>
-            Physical result:
-            <span id="size_result">0</span>
+        
+            <section class="card">
+
+                <div class="card_header">
+                    <hgroup>
+                        <h1>Convertor</h1>
+                        <h2>Convert pixels to physical size</h2>
+                    </hgroup>
+                </div>
+
+                <div class="card_content">
+                    Pixels: <br />
+                    <input type="text" name="" id="px_input" class="border_light text_field"> <br />
+                    Screen DPI: <br />
+                    <input type="text" name="" id="dpi_input" class="border_light text_field"> <br />
+                    <br />
+                    Physical result:
+                    <span id="size_result">0</span>
+                </div>
+
+                <div class="card_actions">
+                    <button id="calculate_size_button" class="border_light">Calculate</button>
+                </div>
+
+                <div class="card_shadow"></div>
+
+            </section>
+
+            <section class="card">
+
+                <div class="card_header">
+                    <hgroup>
+                        <h1>Scale calculator</h1>
+                        <h2>Calculate px by dpi and dp size for Android</h2>
+                    </hgroup>
+                </div>
+
+                <div class="card_content">
+                    Size, dp: <br />
+                    <input type="text" name="" id="size_calc_dp" class="border_light text_field">
+                    <br />
+                    DPI: <br />
+                    <input type="text" name="" id="screen_dpi" class="border_light text_field">
+                    <br />
+                    Result: <span id="real_size"></span>
+                </div>
+
+                <div class="card_actions">
+                    <button id="calculate_realsize_button" class="border_light">Calculate</button>
+                </div>
+
+                <div class="card_shadow"></div>
+
+            </section>
+        
         </section>
+        
         
         <section id="settings_fragment">
             Settings
