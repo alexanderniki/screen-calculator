@@ -96,7 +96,7 @@ section {
     display: flex;
     align-items: center;
     
-    box-shadow: 0px 2px 2px #242424;
+    /*box-shadow: 0px 2px 2px #242424;*/
 }
 
 #tab_bar {
@@ -123,4 +123,11 @@ section {
     font-size: 1em;
     color: #555;
     padding-left: 16px;
+}
+
+
+.border_light {
+    border: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
 }
