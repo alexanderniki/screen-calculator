@@ -66,6 +66,8 @@ section {
     margin: 0px;
     background-color: #424242;
     color: #f0f0f0;
+    
+    display: flex;
 }
 
 
@@ -92,28 +94,26 @@ section {
 
 /* Navigation bar */
 #nav_bar {
-    margin: 0px;
     display: flex;
     align-items: center;
-    
-    /*box-shadow: 0px 2px 2px #242424;*/
+    justify-content: center;
 }
 
 #tab_bar {
     height: 100%;
     padding-left: 8px;
     padding-right: 8px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn_navigation {
-    /*height: 100%;*/
     padding-left: 8px;
     padding-right: 8px;
-    /*border-bottom: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: red;*/
-    display: inline-flex;
-    align-items: center;
+    
+    display: flex;
 }
 /* ---- */
 
